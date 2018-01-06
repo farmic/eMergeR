@@ -6,11 +6,12 @@ df <- eMergeR(dir = "deeptest") # merge all .txt files in the folder 'deeptest' 
 
 df <- eMergeR(filenameContains = "symbol") # merge all files for which the filename contains "symbol"
 
-df <- eMergeR(filenameContains= glob2rx("*VAS*.txt")) # merge all files for which the filename contains both "VAS" and ".txt" (using glob2rx to construct reg expr, * is a wildcard)
-
 df <- eMergeR(filenameContains = "symbol", dir = "deeptest")
 
-# note that if the edat2 files are also in the folder they'll be included and the function will throw errors as it can't parse them.
+# note that if the edat2 files are also in the folder they'll be included and the function
+# sometimes will throw errors as it can't parse them.
+# this can be solves by adding a .txt to filenameContains
+df <- eMergeR(filenameContains= glob2rx("*Flanker*.txt")) # merge all files for which the filename contains both "VAS" and ".txt" (using glob2rx to construct reg expr, * is a wildcard)
 
 
 # examples edatR()  (single e-prime generated .txt file parser)
