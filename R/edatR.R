@@ -3,7 +3,7 @@
 # provides S3 edat class and as.data.frame method to retrive trial log (like an eDataAid export to csv)
 
 
-source('../R/readsplitparse.R')
+#source('../R/readsplitparse.R')
 
 
 # S3 constructor
