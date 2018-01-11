@@ -10,7 +10,7 @@
 
 eMergeR <- function(filenameContains = ".txt", dir = ".") {
   
-  source('../R/edatR.R')
+ # source('../R/edatR.R')
   
   files <- list.files(pattern = filenameContains, path = dir)
   
