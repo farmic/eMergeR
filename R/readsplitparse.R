@@ -24,7 +24,7 @@
   tryCatch({ fileIn=file(fn,open="rb",encoding="unknown")
   on.exit(close(fileIn))
   lines <- readLines(fileIn, skipNul = TRUE)
-  lines <- lines[nchar(lines) > 1]
+  lines[nzchar(lines, keepNA = FALSE)]
   while(any(grepl("^\t", lines)) ){
     lines <- sub("\t", "", lines)  } # repeat this substitute action untill no lines start with \t
   # this allows trials more than 2 levels deep to be parsed too
@@ -32,7 +32,7 @@
     warning = function(e) { fileIn=file(fn,open="rb",encoding="unknown")
     on.exit(close(fileIn))
     lines <- readLines(fileIn, skipNul = TRUE)
-    lines <- lines[nchar(lines) > 1]
+    lines <- lines[nzchar(lines, keepNA = FALSE)]
     while(any(grepl("^\t", lines)) ){
       lines <- sub("\t", "", lines)  } # repeat this substitute action untill no lines start with \t
     # this allows trials more than 2 levels deep to be parsed too
